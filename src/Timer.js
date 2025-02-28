@@ -2,41 +2,65 @@ import React, { useState, useEffect } from "react";
 
 function Timer() {
   const [seconds, setSeconds] = useState(0);
-  const [isActive, setIsActive] = useState(false);  // Track whether the timer is active
+  const [inputTime, setInputTime] = useState(25); // Default time is 25 minutes
+  const [isRunning, setIsRunning] = useState(false); // Timer running state
 
   useEffect(() => {
     let timer;
-    if (seconds > 0 && isActive) {
+    
+    if (isRunning && seconds > 0) {
       timer = setInterval(() => {
-        setSeconds(prev => prev - 1);  // Decrement time
+        setSeconds((prevSeconds) => prevSeconds - 1);
       }, 1000);
-    } else if (seconds === 0 && isActive) {
-      alert("Time's Up!");  // Alert when time is up
-      setIsActive(false);  // Stop the timer after alert
+    } else if (seconds === 0 && isRunning) {
+      alert("Time's Up!");
+      setIsRunning(false);
     }
 
-    return () => clearInterval(timer);  // Clear the interval when timer is stopped
-  }, [seconds, isActive]);  // Watch for changes in seconds and active state
+    return () => clearInterval(timer);
+  }, [seconds, isRunning]);
 
-  // Start the timer
-  const startTimer = () => {
-    setIsActive(true);  // Set timer to active
-    setSeconds(25);  // Start timer at 25 seconds
+  const handleInputChange = (event) => {
+    const value = event.target.value;
+    if (value > 0) {
+      setInputTime(value); // Update input time in minutes
+    }
   };
 
-  // Reset the timer
+  const startTimer = () => {
+    setSeconds(inputTime * 60); // Convert minutes to seconds
+    setIsRunning(true); // Start the timer
+  };
+
   const resetTimer = () => {
-    setIsActive(false);  // Stop the timer
-    setSeconds(0);  // Reset seconds to 0
+    setSeconds(0);
+    setIsRunning(false); // Stop the timer when resetting
   };
 
   return (
-    <div>
-      <h2>{seconds} seconds</h2>
-      <button onClick={startTimer}>Start Timer</button>
-      <button onClick={resetTimer}>Reset Timer</button>
+    <div className="timer-container">
+      <div>
+        <input
+          type="number"
+          value={inputTime}
+          onChange={handleInputChange}
+          min="1"
+        />
+        <label>minutes</label>
+      </div>
+
+      {/* Timer display with nice formatting */}
+      <h3>
+        {Math.floor(seconds / 60)} : {seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60}
+      </h3>
+
+      <div>
+        <button onClick={startTimer} disabled={isRunning}>Start Timer</button>
+        <button onClick={resetTimer}>Reset Timer</button>
+      </div>
     </div>
   );
 }
 
 export default Timer;
+
