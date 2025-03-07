@@ -1,68 +1,47 @@
-import React, { useState, useEffect } from "react"; // Only one import statement
-import { mintNFT } from "./solana";  // Import the NFT minting function
+import React, { useState, useEffect } from 'react';
+import { mintNFT } from './solanaMint';  // Import your mintNFT function
 
-function Timer() {
-  const [seconds, setSeconds] = useState(0);
-  const [inputTime, setInputTime] = useState(25); // Default time is 25 minutes
-  const [isRunning, setIsRunning] = useState(false); // Timer running state
+const Timer = () => {
+  const [timeLeft, setTimeLeft] = useState(25 * 60);  // Timer for 25 minutes (for example)
+  const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    let timer;
-    
-    if (isRunning && seconds > 0) {
-      timer = setInterval(() => {
-        setSeconds((prevSeconds) => prevSeconds - 1);
-      }, 1000);
-    } else if (seconds === 0 && isRunning) {
-      alert("Time's Up!");
-      setIsRunning(false);
-    }
-
-    return () => clearInterval(timer);
-  }, [seconds, isRunning]);
-
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-    if (value > 0) {
-      setInputTime(value); // Update input time in minutes
-    }
-  };
-
+  // Start the timer
   const startTimer = () => {
-    setSeconds(inputTime * 60); // Convert minutes to seconds
-    setIsRunning(true); // Start the timer
+    setIsActive(true);
   };
 
-  const resetTimer = () => {
-    setSeconds(0);
-    setIsRunning(false); // Stop the timer when resetting
+  // Stop the timer
+  const stopTimer = () => {
+    setIsActive(false);
   };
+
+  // Decrement time left every second
+  useEffect(() => {
+    let interval;
+    if (isActive && timeLeft > 0) {
+      interval = setInterval(() => setTimeLeft((prev) => prev - 1), 1000);
+    } else if (timeLeft === 0) {
+      mintNFT();  // Call mintNFT when timer finishes
+      setIsActive(false);  // Stop the timer once done
+    }
+    return () => clearInterval(interval);
+  }, [isActive, timeLeft]);
 
   return (
-    <div className="timer-container">
+    <div>
+      <h2>Focus Timer</h2>
       <div>
-        <input
-          type="number"
-          value={inputTime}
-          onChange={handleInputChange}
-          min="1"
-        />
-        <label>minutes</label>
-      </div>
-
-      {/* Timer display with nice formatting */}
-      <h3>
-        {Math.floor(seconds / 60)} : {seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60}
-      </h3>
-
-      <div>
-        <button onClick={startTimer} disabled={isRunning}>Start Timer</button>
-        <button onClick={resetTimer}>Reset Timer</button>
+        <p>Time Left: {Math.floor(timeLeft / 60)}:{timeLeft % 60}</p>
+        <button onClick={startTimer} disabled={isActive}>
+          Start Timer
+        </button>
+        <button onClick={stopTimer} disabled={!isActive}>
+          Stop Timer
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default Timer;
-
 

@@ -1,11 +1,24 @@
-import React from 'react';
-import Timer from './Timer'; // Assuming Timer.js exists
+// src/App.js
+import React, { useState } from 'react';
+import './App.css';
+
+import { mintNFT } from './solanaService';  // Import the service
 
 function App() {
+  const [isMinting, setIsMinting] = useState(false);
+
+  const handleMintNFT = async () => {
+    setIsMinting(true);
+    await mintNFT();
+    setIsMinting(false);
+  };
+
   return (
     <div className="App">
       <h1>Focus Timer</h1>
-      <Timer /> {/* Directly render Timer */}
+      <button onClick={handleMintNFT} disabled={isMinting}>
+        {isMinting ? 'Minting NFT...' : 'Mint NFT'}
+      </button>
     </div>
   );
 }
