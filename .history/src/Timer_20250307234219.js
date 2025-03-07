@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; // Only one import statement
 
 function Timer({ onTimerFinish }) {  // Accept a prop to notify when the timer finishes
   const [seconds, setSeconds] = useState(0);

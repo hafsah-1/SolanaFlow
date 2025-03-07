@@ -1,25 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; // Only one import statement
+import { mintNFT } from "./solana";  // Import the NFT minting function
 
-function Timer({ onTimerFinish }) {  // Accept a prop to notify when the timer finishes
-  const [seconds, setSeconds] = useState(0);
-  const [inputTime, setInputTime] = useState(25); // Default time is 25 minutes
+function Timer() {
+  const [seconds, setSeconds] = useState(0); // Store seconds for countdown
+  const [inputTime, setInputTime] = useState(25); // Default time in minutes
   const [isRunning, setIsRunning] = useState(false); // Timer running state
 
   useEffect(() => {
     let timer;
-    
+
     if (isRunning && seconds > 0) {
+      // Start the timer countdown when it's running
       timer = setInterval(() => {
         setSeconds((prevSeconds) => prevSeconds - 1);
       }, 1000);
     } else if (seconds === 0 && isRunning) {
+      // When timer reaches 0, stop it and trigger minting NFT
       alert("Time's Up!");
+      mintNFT();  // Trigger NFT minting when time is up
       setIsRunning(false);
-      onTimerFinish();  // Notify parent component when timer finishes
     }
 
-    return () => clearInterval(timer);
-  }, [seconds, isRunning, onTimerFinish]);
+    return () => clearInterval(timer); // Cleanup the interval when the component unmounts or timer stops
+  }, [seconds, isRunning]); // Dependency array to run the effect when seconds or isRunning change
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -34,8 +37,8 @@ function Timer({ onTimerFinish }) {  // Accept a prop to notify when the timer f
   };
 
   const resetTimer = () => {
-    setSeconds(0);
-    setIsRunning(false); // Stop the timer when resetting
+    setSeconds(0);  // Reset the timer to 0
+    setIsRunning(false); // Stop the timer
   };
 
   return (
@@ -50,19 +53,17 @@ function Timer({ onTimerFinish }) {  // Accept a prop to notify when the timer f
         <label>minutes</label>
       </div>
 
-      {/* Timer display with nice formatting */}
+      {/* Timer display */}
       <h3>
         {Math.floor(seconds / 60)} : {seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60}
       </h3>
 
       <div>
-        {!isRunning && seconds === 0 && (
-          <button onClick={startTimer}>
-            Start Timer
-          </button>
-        )}
-        <button onClick={resetTimer} disabled={isRunning}>
-          Reset Timer
+        <button onClick={startTimer} disabled={isRunning}>
+          Start Timer
+        </button>
+        <button onClick={resetTimer} disabled={!isRunning}>
+          Stop Timer
         </button>
       </div>
     </div>
