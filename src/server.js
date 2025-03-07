@@ -7,8 +7,7 @@ app.use(express.json());
 
 // MongoDB connection
 mongoose.connect('mongodb://localhost:27017/focus-timer', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+
 });
 
 const sessionSchema = new mongoose.Schema({

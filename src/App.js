@@ -1,14 +1,15 @@
 import React from 'react';
-import './App.css';
-import Timer from './Timer';
+import Timer from './Timer'; // Assuming Timer.js exists
 
 function App() {
   return (
     <div className="App">
-      <h1>Focus Timer</h1> {/* Keep the title here */}
-      <Timer />
+      <h1>Focus Timer</h1>
+      <Timer /> {/* Directly render Timer */}
     </div>
   );
 }
 
 export default App;
+
+

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; // Only one import statement
+import { mintNFT } from "./solana";  // Import the NFT minting function
 
 function Timer() {
   const [seconds, setSeconds] = useState(0);
@@ -63,4 +64,5 @@ function Timer() {
 }
 
 export default Timer;
+
 
