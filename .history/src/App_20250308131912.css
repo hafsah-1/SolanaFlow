@@ -1,0 +1,17 @@
+.console-logs {
+  background-color: #1e1e1e;
+  color: #00ff00; /* Green text color for the console */
+  font-family: 'Courier New', monospace;
+  padding: 10px;
+  margin-top: 20px;
+  height: 300px; /* Fixed height for the console */
+  overflow-y: scroll; /* Make sure it's scrollable */
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.console-logs p {
+  margin: 0;
+  padding: 5px;
+}

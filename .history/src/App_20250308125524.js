@@ -35,30 +35,43 @@ function App() {
 
   return (
     <div className="App">
-      <h1></h1>
+      {/* Profile and Wallet Section */}
+      <div className="profile-wallet">
+        {/* Add your profile and wallet components here */}
+        <h3>Profile & Wallet</h3>
+      </div>
 
-      <Timer onTimerFinish={handleTimerFinish} /> {/* Pass the function to Timer */}
+      {/* Console Log Section */}
+      <div className="console-logs">
+        {/* Add your console logs here */}
+        <h3>Console</h3>
+      </div>
 
-      {/* Only show the Mint NFT button after the timer finishes */}
-      {isTimerFinished && !isMinting && !mintStatus && (
-        <button onClick={handleMintNFT}>
-          Mint NFT
-        </button>
-      )}
+      {/* Timer Section */}
+      <div className="timer">
+        <Timer onTimerFinish={handleTimerFinish} /> {/* Pass the function to Timer */}
 
-      {/* Show minting status and logs */}
-      {mintStatus && (
-        <div className="mint-status">
-          <p>{mintStatus}</p>
-        </div>
-      )}
+        {/* Only show the Mint NFT button after the timer finishes */}
+        {isTimerFinished && !isMinting && !mintStatus && (
+          <button onClick={handleMintNFT}>
+            Mint NFT
+          </button>
+        )}
 
-      {/* Reset button to start the timer and minting process again */}
-      {mintStatus && (
-        <button onClick={handleReset}>
-          Start New Timer
-        </button>
-      )}
+        {/* Show minting status and logs */}
+        {mintStatus && (
+          <div className="mint-status">
+            <p>{mintStatus}</p>
+          </div>
+        )}
+
+        {/* Reset button to start the timer and minting process again */}
+        {mintStatus && (
+          <button onClick={handleReset}>
+            Start New Timer
+          </button>
+        )}
+      </div>
     </div>
   );
 }

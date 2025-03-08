@@ -55,15 +55,6 @@ body {
   height: 200px;
   box-sizing: border-box;
 }
-h3 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #00aaff; /* Matches terminal theme */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 250px;
-}
 
 /* Console log styling */
 .console-logs {
@@ -139,8 +130,7 @@ button:disabled {
 
 /* Time label styling */
 label {
-
-  font-size: 20px;
+  font-size: 18px;
   color: #0099cc;
 }
 
@@ -164,8 +154,5 @@ label {
     grid-template-columns: 1fr;
   }
 
-  .console-logs {
-    width: 100%;
-    margin-left: 0;
-  }
+  
 }

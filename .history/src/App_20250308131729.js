@@ -35,30 +35,46 @@ function App() {
 
   return (
     <div className="App">
-      <h1></h1>
+      {/* Profile Section */}
+      <div className="profile">
+        <h3>Profile</h3>
+        <p>Wallet Info</p>
+        <p>Number of NFTs minted: 5</p>
+        {/* Add popup or more information here */}
+      </div>
 
-      <Timer onTimerFinish={handleTimerFinish} /> {/* Pass the function to Timer */}
+      {/* Timer Section */}
+      <div className="timer">
+        <Timer onTimerFinish={handleTimerFinish} /> {/* Pass the function to Timer */}
 
-      {/* Only show the Mint NFT button after the timer finishes */}
-      {isTimerFinished && !isMinting && !mintStatus && (
-        <button onClick={handleMintNFT}>
-          Mint NFT
-        </button>
-      )}
+        {/* Only show the Mint NFT button after the timer finishes */}
+        {isTimerFinished && !isMinting && !mintStatus && (
+          <button onClick={handleMintNFT}>
+            Mint NFT
+          </button>
+        )}
 
-      {/* Show minting status and logs */}
-      {mintStatus && (
-        <div className="mint-status">
-          <p>{mintStatus}</p>
-        </div>
-      )}
+        {/* Show minting status and logs */}
+        {mintStatus && (
+          <div className="mint-status">
+            <p>{mintStatus}</p>
+          </div>
+        )}
 
-      {/* Reset button to start the timer and minting process again */}
-      {mintStatus && (
-        <button onClick={handleReset}>
-          Start New Timer
-        </button>
-      )}
+        {/* Reset button to start the timer and minting process again */}
+        {mintStatus && (
+          <button onClick={handleReset}>
+            Start New Timer
+          </button>
+        )}
+      </div>
+
+      {/* Console Log Section */}
+      <div className="console-logs">
+        <h3></h3>
+        <p>Timer started...</p>
+        {/* Add more console log outputs here */}
+      </div>
     </div>
   );
 }

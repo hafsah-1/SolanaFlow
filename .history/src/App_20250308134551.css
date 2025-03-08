@@ -26,7 +26,15 @@ body {
   box-shadow: 0 0 25px rgba(0, 170, 255, 0.4); /* Neon blue glow */
   animation: fadeIn 1s ease-in-out;
 }
-
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00aaff; /* Matches terminal theme */
+  
+  
+  align-items: flex-start;
+  justify-content: center;
+}
 /* Fade-in animation for smooth entry */
 @keyframes fadeIn {
   from {
@@ -54,15 +62,6 @@ body {
   width: 150px;
   height: 200px;
   box-sizing: border-box;
-}
-h3 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #00aaff; /* Matches terminal theme */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 250px;
 }
 
 /* Console log styling */

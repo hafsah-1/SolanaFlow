@@ -1,13 +1,11 @@
-/* App.css */
-
 /* Dark background with blue accents for a futuristic feel */
 body {
   background-color: #0e0e0e; /* Dark background */
   color: #ffffff; /* White text for high contrast */
   font-family: 'Roboto Mono', monospace; /* Monospace font for terminal feel */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   height: 100vh;
   margin: 0;
   overflow: hidden;
@@ -16,8 +14,9 @@ body {
 /* Main container for the timer and logs with box-like design */
 .App {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center; /* Center everything horizontally */
+  align-items: center; /* Center everything vertically */
+  flex-direction: row; /* Display timer and console side by side */
   background-color: #1b1b1b; /* Darker gray box */
   border: 2px solid #00aaff; /* Blue border */
   padding: 20px;
@@ -25,6 +24,9 @@ body {
   max-width: 1000px;
   box-shadow: 0 0 25px rgba(0, 170, 255, 0.4); /* Neon blue glow */
   animation: fadeIn 1s ease-in-out;
+  height: 70vh; /* Adjust height for proper positioning */
+  justify-content: space-between; /* Ensure timer and console are spaced evenly */
+  box-sizing: border-box;
 }
 
 /* Fade-in animation for smooth entry */
@@ -39,7 +41,7 @@ body {
   }
 }
 
-/* Timer display on the left side */
+/* Timer container with vertical spacing */
 .timer {
   font-size: 50px;
   color: #0099cc; /* Darker blue for the timer */
@@ -51,18 +53,10 @@ body {
   justify-content: center;
   padding: 10px;
   border: 1px solid #0099cc;
-  width: 150px;
-  height: 200px;
+  width: 250px; /* Increased width for more space */
+  height: 350px; /* Increased height to prevent squishing */
   box-sizing: border-box;
-}
-h3 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #00aaff; /* Matches terminal theme */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 250px;
+  text-align: center;
 }
 
 /* Console log styling */
@@ -71,14 +65,15 @@ h3 {
   color: #00aaff; /* Bright blue for the log text */
   font-family: 'Roboto Mono', monospace;
   padding: 20px;
-  margin-left: 30px;
-  width: 60%;
-  height: 400px;
+  margin-top: 0; /* Removed margin-top to make console sit beside timer */
+  width: 50%; /* Adjust width to fit well with timer */
+  height: 350px; /* Same height as timer */
   border: 1px solid #00aaff; /* Blue border */
   overflow-y: auto;
   font-size: 14px;
   box-shadow: 0 0 10px rgba(0, 170, 255, 0.3); /* Soft blue glow */
   box-sizing: border-box;
+  text-align: left; /* Align text to the left */
 }
 
 /* Console log entry styling */
@@ -101,7 +96,7 @@ input[type="number"] {
   width: 80px;
   padding: 10px;
   font-size: 18px;
-  margin: 20px;
+  margin: 20px 0; /* Added margin to separate it from the timer */
   border: 1px solid #0099cc; /* Cyan border */
   outline: none;
   font-family: 'Roboto Mono', monospace;
@@ -119,7 +114,7 @@ button {
   font-size: 16px;
   border: none;
   padding: 10px 20px;
-  margin: 10px;
+  margin: 10px 0; /* Added margin to separate buttons */
   border: 2px solid #0099cc; /* Blue border for buttons */
   cursor: pointer;
   transition: all 0.3s ease;
@@ -139,17 +134,18 @@ button:disabled {
 
 /* Time label styling */
 label {
-
-  font-size: 20px;
+  font-size: 18px;
   color: #0099cc;
 }
 
 /* Grid-like structure for timer and console logs */
 .timer-container {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
+  height: 100%;
 }
 
 /* Adjusting responsiveness for smaller screens */
@@ -161,7 +157,6 @@ label {
 
   .timer-container {
     flex-direction: column;
-    grid-template-columns: 1fr;
   }
 
   .console-logs {
@@ -169,3 +164,5 @@ label {
     margin-left: 0;
   }
 }
+
+

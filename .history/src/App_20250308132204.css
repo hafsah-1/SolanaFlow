@@ -1,0 +1,82 @@
+/* Full screen background and center everything */
+body {
+  background-color: #0e0e0e; /* Dark background */
+  color: #ffffff; /* White text */
+  font-family: 'Roboto Mono', monospace; /* Monospace font */
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+/* Main App container for 3 sections */
+.App {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Profile Section */
+.profile {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile button {
+  background-color: #0099cc;
+  color: #0e0e0e;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.profile button:hover {
+  background-color: #007a99;
+}
+
+/* Timer Section */
+.timer {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #0099cc;
+}
+
+/* Console Section */
+.console-logs {
+  width: 33%;
+  background-color: #0e0e0e;
+  color: #00aaff;
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 14px;
+  height: 100%;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+/* Make the sections stack on smaller screens */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  .profile, .timer, .console-logs {
+    width: 100%; /* Full width for each section */
+    margin-bottom: 10px;
+  }
+}

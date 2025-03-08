@@ -1,5 +1,3 @@
-/* App.css */
-
 /* Dark background with blue accents for a futuristic feel */
 body {
   background-color: #0e0e0e; /* Dark background */
@@ -16,7 +14,7 @@ body {
 /* Main container for the timer and logs with box-like design */
 .App {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align items to the left */
   align-items: flex-start;
   background-color: #1b1b1b; /* Darker gray box */
   border: 2px solid #00aaff; /* Blue border */
@@ -25,6 +23,9 @@ body {
   max-width: 1000px;
   box-shadow: 0 0 25px rgba(0, 170, 255, 0.4); /* Neon blue glow */
   animation: fadeIn 1s ease-in-out;
+  height: 80vh; /* Set height to ensure it stays centered vertically */
+  justify-content: center;
+  flex-direction: column; /* Align items in a column */
 }
 
 /* Fade-in animation for smooth entry */
@@ -54,15 +55,6 @@ body {
   width: 150px;
   height: 200px;
   box-sizing: border-box;
-}
-h3 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #00aaff; /* Matches terminal theme */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 250px;
 }
 
 /* Console log styling */
@@ -139,17 +131,17 @@ button:disabled {
 
 /* Time label styling */
 label {
-
-  font-size: 20px;
+  font-size: 18px;
   color: #0099cc;
 }
 
 /* Grid-like structure for timer and console logs */
 .timer-container {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
+  height: 100%;
 }
 
 /* Adjusting responsiveness for smaller screens */
@@ -169,3 +161,4 @@ label {
     margin-left: 0;
   }
 }
+

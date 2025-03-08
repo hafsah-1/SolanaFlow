@@ -1,0 +1,132 @@
+/* Dark background with blue accents for a futuristic feel */
+body {
+  background-color: #0e0e0e; /* Dark background */
+  color: #ffffff; /* White text for high contrast */
+  font-family: 'Roboto Mono', monospace; /* Monospace font for terminal feel */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full height */
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Main container for the layout */
+.App {
+  display: flex;
+  flex-direction: row; /* Side-by-side layout */
+  width: 100%;
+  height: 100%; /* Full height */
+  box-sizing: border-box;
+}
+
+/* Profile section on the left (1/3 width) */
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%; /* Takes up 1/3 of the screen width */
+  background-color: #2e2e2e;
+  border-right: 2px solid #00aaff; /* Blue border */
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Timer section in the center (1/3 width) */
+.timer {
+  font-size: 50px;
+  color: #0099cc; /* Darker blue for the timer */
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-right: 2px solid #00aaff;
+  width: 33.33%; /* Takes up 1/3 of the screen width */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Console log section on the right (1/3 width) */
+.console-logs {
+  background-color: #0e0e0e; /* Dark background for the console */
+  color: #00aaff; /* Bright blue for the log text */
+  font-family: 'Roboto Mono', monospace;
+  padding: 20px;
+  width: 33.33%; /* Takes up 1/3 of the screen width */
+  height: 100%; /* Full height */
+  border-left: 2px solid #00aaff; /* Blue border */
+  box-sizing: border-box;
+  overflow-y: auto;
+  text-align: left;
+}
+
+/* Input field for setting time */
+input[type="number"] {
+  background-color: #0e0e0e; /* Dark background */
+  color: #0099cc; /* Blue text for inputs */
+  width: 80px;
+  padding: 10px;
+  font-size: 18px;
+  margin: 20px 0; /* Added margin to separate it from the timer */
+  border: 1px solid #0099cc; /* Cyan border */
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* Button styling */
+button {
+  background-color: #0099cc; /* Blue background for buttons */
+  color: #0e0e0e; /* Dark text */
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0; /* Added margin to separate buttons */
+  border: 2px solid #0099cc; /* Blue border for buttons */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box;
+}
+
+/* Button hover effects */
+button:hover {
+  background-color: #007a99;
+}
+
+button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+/* Minting Status Styling */
+.mint-status {
+  font-size: 18px;
+  color: #00aaff;
+  margin-top: 20px;
+}
+
+/* Adjusting responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column; /* Stack the sections vertically */
+  }
+
+  .profile,
+  .timer,
+  .console-logs {
+    width: 100%; /* Full width on small screens */
+    margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .profile {
+    margin-right: 0; /* Remove right margin on small screens */
+  }
+
+  .console-logs {
+    margin-right: 0; /* Remove right margin on small screens */
+  }
+}
+

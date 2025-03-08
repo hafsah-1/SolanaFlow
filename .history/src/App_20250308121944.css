@@ -1,0 +1,166 @@
+/* App.css */
+
+/* Center everything */
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: #c7c7c7;
+  font-family: 'Courier New', Courier, monospace;
+  transition: background 0.5s ease-in-out;
+}
+.App {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  justify-content: space-between;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.timer {
+  font-size: 50px;
+  flex: 1;
+  margin-right: 20px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+
+/* Style for the main title */
+.App h1 {
+  color: #9979cd;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: popIn 0.8s ease-in-out;
+}
+
+/* Style for the timer container 
+.timer-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  margin-top: 20px;
+}*/
+
+/* Input field for setting time */
+input[type="number"] {
+  width: 80px;
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+input[type="number"]:focus {
+  border-color: #9979cd;
+}
+
+/* Buttons for Start and Reset */
+button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Timer display with larger font */
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Time label styling */
+label {
+  font-size: 18px;
+  margin-top: 10px;
+}
+.wallet-profile {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.wallet-profile.active {
+  display: block;
+}
+
+.wallet-profile p {
+  margin: 5px 0;
+}
+
+.close-button {
+  background: red;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.close-button:hover {
+  background: darkred;
+}
+
+.console-box {
+  width: 300px;
+  height: 100%;
+  background-color: #333;
+  color: #c7c7c7;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+.console-box h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.logs {
+  max-height: 80vh;
+  overflow-y: auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 14px;
+  color: #b5b5b5;
+  margin: 0;
+}

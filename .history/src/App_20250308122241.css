@@ -1,0 +1,94 @@
+.body {
+  display: flex;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: #c7c7c7;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.App {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.timer-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+h1, h4 {
+  color: #f2f2f2;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+.wallet-profile {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.wallet-profile.active {
+  display: block;
+}
+
+.wallet-profile p {
+  margin: 5px 0;
+}
+
+.close-button {
+  background: red;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.close-button:hover {
+  background: darkred;
+}
+
+.console-box {
+  width: 300px;
+  height: 100%;
+  background-color: #333;
+  color: #c7c7c7;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+.console-box h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.logs {
+  max-height: 80vh;
+  overflow-y: auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 14px;
+  color: #b5b5b5;
+  margin: 0;
+}
