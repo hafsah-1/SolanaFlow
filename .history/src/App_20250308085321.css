@@ -55,14 +55,14 @@ body {
 
 /* Style for the main title */
 .App h1 {
-  color: #9979cd;
+  color: #894ee8;
   font-size: 26px;
   font-weight: bold;
   margin-bottom: 10px;
   animation: popIn 0.8s ease-in-out;
 }
 
-/* Style for the timer container 
+/* Style for the timer container */
 .timer-container {
   background-color: #fff;
   padding: 30px;
@@ -71,7 +71,7 @@ body {
   width: 300px;
   text-align: center;
   margin-top: 20px;
-}*/
+}
 
 /* Input field for setting time */
 input[type="number"] {
@@ -85,12 +85,12 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-  border-color: #9979cd;
+  border-color: #4CAF50;
 }
 
 /* Buttons for Start and Reset */
 button {
-  background-color: #9979cd;
+  background-color: #4CAF50;
   color: white;
   font-size: 16px;
   border: none;
@@ -102,7 +102,7 @@ button {
 }
 
 button:hover {
-  background-color: #9979cd;
+  background-color: #45a049;
 }
 
 button:disabled {

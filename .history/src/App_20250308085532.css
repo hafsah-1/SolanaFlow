@@ -85,12 +85,12 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-  border-color: #9979cd;
+  border-color: #4CAF50;
 }
 
 /* Buttons for Start and Reset */
 button {
-  background-color: #9979cd;
+  background-color: #4CAF50;
   color: white;
   font-size: 16px;
   border: none;
@@ -102,7 +102,7 @@ button {
 }
 
 button:hover {
-  background-color: #9979cd;
+  background-color: #45a049;
 }
 
 button:disabled {
