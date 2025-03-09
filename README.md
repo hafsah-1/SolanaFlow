@@ -14,12 +14,12 @@ SolanaFlow is a Web3-based focus timer that rewards users with NFTs upon complet
 
 ### Upcoming Features
 
-- **Enhanced Wallet Integration**: Improved Solana wallet management.
-- **More NFT Customization**: Unique NFT designs based on session performance.
+- **More NFT Customization**: Unique NFT designs based on session performance - for example, special NFT's fo 1 hour, 2 hour etc sessions that can be displayed on the user's profile, an example .png for 1 minute was made for testing
 - **SolanaPay Integration**: Enable optional payments or staking for enhanced features.
 - **Dark Mode / Custom Themes**: Personalize the app’s appearance.
 - **Leaderboard**: Track top users based on focus sessions completed.
 - **Friends System**: Add and manage friends to compare productivity.
+- - **Enhanced Wallet Integration**: Improved Solana wallet management.
 
 ## Hackathon Participation
 
