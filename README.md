@@ -86,9 +86,6 @@ Contributions are welcome! If you'd like to add features or improve existing one
 - [Solana Courses](https://www.soldev.app/)
 - [Solana Cookbook](https://solana.com/developers/cookbook)
 
-## License
-
-This project is licensed under the MIT License.
 
 ---
 
