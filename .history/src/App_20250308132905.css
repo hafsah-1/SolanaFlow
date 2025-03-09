@@ -1,0 +1,144 @@
+/* Center everything */
+body {
+  background-color: #121212; /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #FFF;
+  margin: 0;
+  transition: background 0.5s ease-in-out;
+}
+
+/* App container with rounded corners and shadows */
+.App {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  max-width: 1200px;
+  height: 80%;
+  background-color: #1b1b1b; /* Dark background */
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+/* Profile section */
+.profile {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile button {
+  background-color: #0099cc; /* Blue button */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.profile button:hover {
+  background-color: #007a99;
+}
+
+/* Timer Section - Mimicking Terminal Style */
+.timer {
+  width: 33%;
+  background-color: #121212;
+  color: #00ff00; /* Green text for terminal feel */
+  font-size: 50px;
+  font-family: 'Courier New', monospace; /* Monospace font for terminal feel */
+  font-weight: bold;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+/* Console Section */
+.console-logs {
+  width: 33%;
+  background-color: #0e0e0e; /* Darker background for console */
+  color: #00aaff; /* Blue text */
+  font-family: 'Courier New', monospace; /* Monospace font for console logs */
+  font-size: 14px;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto; /* Scrollable if logs overflow */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #9979cd; /* Purple background */
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #7a60a6; /* Darker purple on hover */
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Time label styling */
+label {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Input field for setting time */
+input[type="number"] {
+  width: 80px;
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+input[type="number"]:focus {
+  border-color: #9979cd;
+}
+
+/* Adjust sections for smaller screens */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  .timer, .console-logs, .profile {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

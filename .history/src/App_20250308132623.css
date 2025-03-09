@@ -1,0 +1,157 @@
+/* Center everything */
+body {
+  background-color: #0e0e0e; /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.5s ease-in-out;
+}
+
+/* App container with rounded corners and shadows */
+.App {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  height: 80%;
+  background-color: #1b1b1b; /* Darker background */
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Timer section */
+.timer {
+  width: 33%;
+  color: #D97706; /* Gold color for the timer */
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 20px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+/* Console Section */
+.console-logs {
+  width: 33%;
+  background-color: #0e0e0e;
+  color: #00aaff;
+  padding: 20px;
+  font-size: 14px;
+  overflow-y: auto;
+  height: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #9979cd; /* Purple background */
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #7a60a6; /* Darker purple on hover */
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Profile Section */
+.profile {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile button {
+  background-color: #0099cc; /* Blue color */
+  color: #0e0e0e;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.profile button:hover {
+  background-color: #007a99; /* Darker blue */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Time label styling */
+label {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Input field for setting time */
+input[type="number"] {
+  width: 80px;
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+input[type="number"]:focus {
+  border-color: #9979cd;
+}
+
+/* Adjust sections for smaller screens */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  .timer, .console-logs, .profile {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

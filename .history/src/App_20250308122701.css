@@ -1,0 +1,162 @@
+/* App.css */
+
+/* Set up dark theme and center everything */
+body {
+  background-color: #1e1e1e; /* Dark background like a terminal */
+  color: #00ff00; /* Bright green text */
+  font-family: 'Courier New', monospace; /* Monospace font for terminal look */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+/* Main container with a terminal-like window design */
+.App {
+  background-color: #2e2e2e; /* Slightly lighter background */
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 20px 40px;
+  width: 400px;
+  animation: fadeIn 1s ease-in-out;
+  border: 2px solid #00ff00; /* Terminal border */
+}
+
+/* Keyframes for fading in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulsing effect for the timer */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+/* Timer display styling */
+.timer {
+  font-size: 50px;
+  color: #00ff00; /* Bright green text */
+  margin: 20px 0;
+  font-weight: bold;
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* Style for the main title */
+.App h1 {
+  color: #00ff00; /* Green color for the header */
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Button styling, resembling terminal commands */
+button {
+  background-color: #00ff00;
+  color: #1e1e1e;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+  border: 2px solid #00ff00; /* Match terminal border */
+}
+
+/* Button hover effects */
+button:hover {
+  background-color: #005500;
+  color: #00ff00;
+}
+
+button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+/* Timer text display */
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Input field for setting time */
+input[type="number"] {
+  background-color: #2e2e2e; /* Dark background for inputs */
+  color: #00ff00; /* Green text */
+  width: 100px;
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 1px solid #00ff00; /* Green border */
+  outline: none;
+  font-family: 'Courier New', monospace;
+}
+
+/* Input focus styling */
+input[type="number"]:focus {
+  border-color: #00ff00;
+}
+
+/* Console log container styling */
+.console-logs {
+  background-color: #000; /* Black background for the logs */
+  color: #00ff00; /* Green text */
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 150px;
+  overflow-y: auto;
+  font-size: 14px;
+  border: 2px solid #00ff00; /* Green border for console */
+}
+
+/* Style for each log line in the console */
+.console-logs p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 600px) {
+  .App {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .timer {
+    font-size: 40px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+

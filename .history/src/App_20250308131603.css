@@ -1,0 +1,97 @@
+/* Dark background with blue accents for a futuristic feel */
+body {
+  background-color: #0e0e0e; /* Dark background */
+  color: #ffffff; /* White text for high contrast */
+  font-family: 'Roboto Mono', monospace; /* Monospace font for terminal feel */
+  margin: 0;
+  height: 100vh; /* Full height of the screen */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: row;
+  overflow: hidden;
+}
+
+/* Main container for the entire layout */
+.App {
+  display: flex;
+  flex-direction: row; /* Layout side-by-side */
+  width: 100%; /* Full width of the screen */
+  height: 100%; /* Full height of the screen */
+  box-sizing: border-box;
+}
+
+/* Profile Section - Takes up 1/3 of the screen */
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+  padding: 20px;
+  color: #00aaff;
+  text-align: center;
+}
+
+/* Timer Section - Takes up 1/3 of the screen */
+.timer {
+  font-size: 30px; /* Reduced size */
+  color: #0099cc; /* Darker blue for the timer */
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Console Section - Takes up 1/3 of the screen */
+.console-logs {
+  background-color: #0e0e0e; /* Dark background for the console */
+  color: #00aaff; /* Bright blue for the log text */
+  font-family: 'Roboto Mono', monospace;
+  width: 33.33%; /* Full width of the section */
+  height: 100%; /* Full height */
+  padding: 20px;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* Button styling */
+button {
+  background-color: #0099cc; /* Blue background for buttons */
+  color: #0e0e0e; /* Dark text */
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: 2px solid #0099cc; /* Blue border for buttons */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #007a99;
+}
+
+button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+/* Adjust responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column; /* Stack the sections vertically */
+  }
+
+  .profile, .timer, .console-logs {
+    width: 100%; /* Full width on small screens */
+    margin-bottom: 20px; /* Add space between sections */
+  }
+}

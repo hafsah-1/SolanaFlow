@@ -1,0 +1,207 @@
+/* Center everything */
+body {
+  background-color: #0e0e0e; /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto Mono', monospace; /* Terminal-like font */
+  transition: background 0.5s ease-in-out;
+}
+
+/* Main App container */
+.App {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 90%;
+  background-color: #1b1b1b; /* Dark background for the app */
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in animation for smooth entry */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile Section */
+.profile {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00aaff; /* Blue color for profile section */
+}
+
+.profile button {
+  background-color: #0099cc;
+  color: #0e0e0e;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.profile button:hover {
+  background-color: #007a99;
+}
+
+/* Timer Section */
+.timer {
+  width: 40%;
+  color: #d97706; /* Yellow color for timer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.timer button {
+  background-color: #0099cc;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timer button:hover {
+  background-color: #007a99;
+}
+
+.timer button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+/* Console Section */
+.console-logs {
+  width: 30%;
+  background-color: #0e0e0e; /* Dark background for the console */
+  color: #00aaff; /* Bright blue color for console text */
+  font-family: 'Roboto Mono', monospace; /* Monospace font for terminal-like look */
+  padding: 15px;
+  margin-left: 10px;
+  height: 100%;
+  overflow-y: auto;
+  font-size: 14px;
+  border: 1px solid #00aaff; /* Blue border */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.3); /* Soft blue glow */
+}
+
+/* Console log entry styling */
+.console-logs p {
+  margin: 0;
+  padding: 6px 0;
+}
+
+/* Console log text */
+.console-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Buttons styling for profile and timer */
+button {
+  background-color: #9979cd; /* Purple background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #9b69ac; /* Slightly darker purple on hover */
+}
+
+button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+/* Input field for timer setting */
+input[type="number"] {
+  background-color: #0e0e0e;
+  color: #0099cc;
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px;
+  border: 1px solid #00aaff;
+  border-radius: 5px;
+  outline: none;
+  width: 80px;
+}
+
+/* Focus effect on input */
+input[type="number"]:focus {
+  border-color: #007a99; /* Light blue border on focus */
+}
+
+/* Styling for the timer title */
+.App h1 {
+  color: #9979cd;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: popIn 0.8s ease-in-out;
+}
+
+/* Profile section styling */
+.profile button {
+  font-size: 18px;
+}
+
+/* Timer section text */
+.timer h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Time label styling */
+label {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .profile, .timer, .console-logs {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .console-logs {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,57 @@
+/* Styling for the console terminal */
+.console-terminal {
+  background-color: #1e1e1e;
+  color: #00ff00; /* Green text color for the console */
+  font-family: 'Courier New', monospace;
+  padding: 10px;
+  margin-top: 20px;
+  height: 300px; /* Fixed height for the console */
+  overflow-y: scroll; /* Make sure it's scrollable */
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.console-terminal p {
+  margin: 0;
+  padding: 5px;
+}
+
+/* Minimal styling for buttons */
+button {
+  background-color: #007f00;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #005500;
+}
+
+button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+/* Timer Styling */
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Courier New', monospace;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.preset-buttons button {
+  margin: 5px;
+}
