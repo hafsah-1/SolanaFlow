@@ -1,19 +1,69 @@
 import React, { useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import Timer from './Timer';
+import { mintNFT } from './solanaService';
 import './App.css';
+import logo from './logo.svg';
 
-import Timer from './Timer'; // Import the Timer component
-import { mintNFT } from './solanaService';  // Import the minting function
+function HomePage() {
+  const [showProfile, setShowProfile] = useState(false);
 
-function App() {
+  return (
+    <div className="homepage neon-border">
+      <img src={logo} alt="SolanaFlow Logo" className="logo" />
+      <h1 className="solanaflow-title">SolanaFlow</h1>
+      <div className="button-container">
+        <Link to="timer" className="neon-button">Start Focus Session</Link>
+        <Link to="friends" className="neon-button">Friends</Link>
+        <Link to="leaderboard" className="neon-button">Leaderboard</Link>
+        <button className="neon-button" onClick={() => setShowProfile(true)}>User Profile</button>
+      </div>
+
+      {/* User Profile Popup */}
+      {showProfile && (
+        <div className="profile-popup">
+          <div className="profile-content">
+            <h2>User Profile</h2>
+            <p><strong>Wallet Address:</strong> (Your Solana Address Here)</p>
+            <p><strong>Balance:</strong> 0.00 SOL</p>
+            <p><strong>Sessions Completed:</strong> 10</p>
+            <button className="neon-button" onClick={() => setShowProfile(false)}>Close</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function FriendsPage() {
+  return (
+    <div className="friends-page">
+      <h2>Friends</h2>
+      <p>Feature coming soon!</p>
+      <Link to="/" className="back-button">Back to Home</Link>
+    </div>
+  );
+}
+
+function LeaderboardPage() {
+  return (
+    <div className="leaderboard-page">
+      <h2>Leaderboard</h2>
+      <p>Feature coming soon!</p>
+      <Link to="/" className="back-button">Back to Home</Link>
+    </div>
+  );
+}
+
+function TimerPage() {
   const [isMinting, setIsMinting] = useState(false);
-  const [isTimerFinished, setIsTimerFinished] = useState(false); // Track if the timer is finished
-  const [mintStatus, setMintStatus] = useState(''); // Track minting status
+  const [isTimerFinished, setIsTimerFinished] = useState(false);
+  const [mintStatus, setMintStatus] = useState('');
 
   const handleMintNFT = async () => {
     setIsMinting(true);
     setMintStatus('Minting in progress...');
     try {
-      // Call the mintNFT function here (this can be handled with Solana integration)
       await mintNFT();
       setMintStatus('NFT Minted Successfully!');
     } catch (error) {
@@ -24,42 +74,45 @@ function App() {
   };
 
   const handleTimerFinish = () => {
-    // Set timer finished state to true when timer finishes
     setIsTimerFinished(true);
   };
 
   const handleReset = () => {
-    setIsTimerFinished(false); // Reset the timer finish state
-    setMintStatus(''); // Reset minting status
+    setIsTimerFinished(false);
+    setMintStatus('');
   };
 
   return (
-    <div className="App">
-      <h1></h1>
+    <div className="timer-page">
+      <Link to="/" className="back-button">Back to Home</Link>
+      <h2>Focus Timer</h2>
+      <Timer onTimerFinish={handleTimerFinish} />
 
-      <Timer onTimerFinish={handleTimerFinish} /> {/* Pass the function to Timer */}
-
-      {/* Only show the Mint NFT button after the timer finishes */}
       {isTimerFinished && !isMinting && !mintStatus && (
-        <button onClick={handleMintNFT}>
-          Mint NFT
-        </button>
+        <button className="neon-button" onClick={handleMintNFT}>Mint NFT</button>
       )}
 
-      {/* Show minting status and logs */}
       {mintStatus && (
         <div className="mint-status">
           <p>{mintStatus}</p>
         </div>
       )}
 
-      {/* Reset button to start the timer and minting process again */}
       {mintStatus && (
-        <button onClick={handleReset}>
-          Start New Timer
-        </button>
+        <button className="neon-button" onClick={handleReset}>Start New Timer</button>
       )}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="timer" element={<TimerPage />} />
+      <Route path="friends" element={<FriendsPage />} />
+      <Route path="leaderboard" element={<LeaderboardPage />} />
+    </Routes>
   );
 }
 
