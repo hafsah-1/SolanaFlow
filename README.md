@@ -46,7 +46,7 @@ To align with the hackathon judging criteria, SolanaFlow focuses on:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/SolanaFlow.git
+   git clone https://github.com/hafsah-1/SolanaFlow.git
    cd SolanaFlow
    ```
 2. Install dependencies:
